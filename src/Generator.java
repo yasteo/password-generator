@@ -10,15 +10,11 @@ public class Generator {
         this.number = number;
     }
 
-    public void run() {
-
-    }
-
-    private String generate() {
-        String allowedChars = "qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM_+=-!@#$&*";
+    public String generate() {
+        String allowedChars = "qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*-_+=";
         int len = allowedChars.length();
         var builder = new StringBuilder();
-        for (int i = 0; i < 12; ++i) {
+        for (int i = 0; i < 16; ++i) {
             int idx = calculateIndex(serviceName.charAt(i % serviceLength), i + 1, len);
             builder.append(allowedChars.charAt(idx));
         }
@@ -26,7 +22,7 @@ public class Generator {
     }
 
     private int calculateIndex(char c, int x, int len) {
-        int idx = this.number * (x * x * x) + (int) c * (x * x) + len * x + serviceLength;
+        int idx = this.number * (x * x * x) + this.serviceLength * (x * x) + len * x + (int) c;
         return idx % len;
     }
 

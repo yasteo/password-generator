@@ -54,7 +54,6 @@ public class Main {
                     out.write("Хотите продолжить? [Y/N]: ");
                     out.flush();
                     userChoice = in.readLine().trim().charAt(0);
-                    in.readLine();
                 } catch (IOException e) {
                     System.out.println("Ошибка ввода/вывода");
                 }

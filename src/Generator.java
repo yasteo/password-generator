@@ -4,7 +4,7 @@ public class Generator {
     private final int serviceLength;
     private final int number;
     private final int PASSWORD_LENGTH = 16;
-    private static final int unique;
+    private static final int unique; // Переменная, чтобы у каждого пользователя был разный пароль.
 
     static {
         var reader = new FileReader();

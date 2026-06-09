@@ -21,7 +21,7 @@
 ## 🛠️ Технологии
 
 - Java 21+
-- Никаких внешних зависимостей
+- Maven
 
 ---
 
@@ -29,10 +29,14 @@
 
 ```
 src/
-├── Main.java
-├── Generator.java
-├── FileReader.java
-└── UniqueGenerator.java
+├──main
+│    └──java
+│        ├── Main.java
+│        ├── Generator.java
+│        ├── FileReader.java
+│        └── UniqueGenerator.java
+└──test
+    └──java
 ```
 
 ---
@@ -42,8 +46,8 @@ src/
 ```bash
 git clone git@github.com:yasteo/password-generator
 cd password-generator
-javac src/*.java
-java -cp src Main
+mvn clean package
+java -jar target/generator-project-*.jar
 ```
 
 ---

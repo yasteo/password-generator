@@ -33,3 +33,4 @@ num.txt
 *.iml
 .idea
 *.class
+target/

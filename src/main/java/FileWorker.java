@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class FileReader {
+public class FileWorker {
 
     private final String file = "num.txt";
     private final Path path = Path.of(file);

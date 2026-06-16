@@ -1,6 +1,6 @@
 # 🔐Генератор паролей
 
-Простой консольный генератор паролей на Java.<br>
+Простой консольный генератор паролей на Java
 
 --- 
 
@@ -9,13 +9,12 @@
 Использует название сервиса и число, введённое пользователем, для генерации пароля.<br>
 Для одинаковых входных данных будет сгенерирован один и тот же пароль.
 
-
-
 ---
 
 ## ✨Возможности
 
 - Создание паролей
+- Сохранение данных в БД
 
 ---
 ## 🛠️ Технологии
@@ -28,15 +27,20 @@
 ## 📁 Структура проекта
 
 ```
-src/
-├──main
-│    └──java
-│        ├── Main.java
-│        ├── Generator.java
-│        ├── FileReader.java
-│        └── UniqueGenerator.java
-└──test
-    └──java
+project/
+├──data
+│   └──database.db
+├──src/
+│   ├──main
+│   │    └──java
+│   │        ├── Main.java
+│   │        ├── Generator.java
+│   │        ├── FileReader.java
+│   │        └── UniqueGenerator.java
+│   └──test
+│       └──java
+├──pom.xml
+└──README.md
 ```
 
 ---
@@ -47,22 +51,11 @@ src/
 git clone git@github.com:yasteo/password-generator
 cd password-generator
 mvn clean package
-java -jar target/generator-project-*.jar
-```
-
----
-
-## 📌 Пример работы
-
-```
-Введите название сервиса: Steam
-Введите число: 333
-Ваш пароль: (тут пароль)
-Хотите продолжить? [Y/N]: 
+java --enable-native-access=ALL-UNNAMED -jar target/*.jar
 ```
 
 ---
 
 ## 📋 Чек-лист
 
-- [ ] Сохранение паролей в базе данных.
+- [x] Сохранение данных для пароля в базе данных.
